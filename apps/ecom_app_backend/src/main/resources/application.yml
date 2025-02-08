@@ -50,8 +50,8 @@ spring:
     oauth2:
       resource server:
         jwt:
-          issuer-uri: https://codecake.kinde.com
-          jwk-set-uri: https://codecake.kinde.com/.well-known/jwks
+          issuer-uri: https://aty5.kinde.com
+          jwk-set-uri: https://aty5.kinde.com/.well-known/jwks
           audiences: http://localhost:8080/api
   devtools:
     restart:
@@ -76,3 +76,8 @@ application:
     exposed-headers: "*"
     allow-credentials: false
     max-age: 300
+  kinde:
+    api: https://aty5.kinde.com
+    client-id: ${KINDE_CLIENT_ID}
+    client-secret: ${KINDE_CLIENT_SECRET}
+    audience: https://aty5.kinde.com/api
