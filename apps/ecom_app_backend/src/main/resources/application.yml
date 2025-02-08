@@ -34,16 +34,16 @@ spring:
         connection:
           provider_disables_autocommit: true
         order_inserts: true
-        default_schema: ecom_app
+#        default_schema: ecom_app
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     open-in-view: false
   liquibase:
     change-log: classpath:db/changelog/master.xml
-    default-schema: ecom_app
+#    default-schema: ecom_app
     contexts: dev
   #    drop-first: true
 #  security:
