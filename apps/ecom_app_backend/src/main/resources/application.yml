@@ -46,13 +46,13 @@ spring:
 #    default-schema: ecom_app
     contexts: dev
   #    drop-first: true
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          issuer-uri:
-#          jwk-set-uri:
-#          audiences: http://localhost:8080/api
+  security:
+    oauth2:
+      resource server:
+        jwt:
+          issuer-uri: https://codecake.kinde.com
+          jwk-set-uri: https://codecake.kinde.com/.well-known/jwks
+          audiences: http://localhost:8080/api
   devtools:
     restart:
       enabled: false
@@ -66,3 +66,13 @@ spring:
 
 server:
   port: 8080
+
+application:
+  client-base-url: http://localhost:4200
+  cors:
+    allowed-origins: http://localhost:4200
+    allowed-methods: "*"
+    allowed-headers: "*"
+    exposed-headers: "*"
+    allow-credentials: false
+    max-age: 300
